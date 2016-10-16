@@ -13,7 +13,7 @@ class CAddMessage extends Component {
 		let user, text
 
 		return (
-			<div>
+			<div className="AddMessage">
 				<form onSubmit={e => {
 					e.preventDefault()
 					if (text.value !== "" && user.value !== "") {

@@ -24,10 +24,6 @@ let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window._
 import { setDatabase } from './actions'
 store.dispatch(setDatabase(firebase.database()))
 
-import { addMessage } from './actions'
-store.dispatch(addMessage(0, "Gunnar", "Traktor e kul"))
-store.dispatch(addMessage(0, "Bert", "Traktor e inte kul"))
-
 ReactDOM.render(
 	<Provider store={store}>
 		<App />
