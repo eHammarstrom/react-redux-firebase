@@ -1,24 +1,24 @@
-import React, { Component, PropTypes } from 'react'
-import Message from './Message'
-import './MessageList.css'
+import React, { Component, PropTypes } from 'react';
+import Message from './Message';
+import './MessageList.css';
 
-import { addMessage } from '../actions'
+import { addMessage } from '../actions';
 
 class MessageList extends Component {
 	constructor(props) {
-		super(props)
-		this.props = props
+		super(props);
+		this.props = props;
 	}
 
 	componentWillMount() {
-		this.channelRef = this.props.database.ref('channels/' + this.props.channelId + '/messages/')
+		this.channelRef = this.props.database.ref('channels/' + this.props.channelId + '/messages/');
 		this.channelRef.on('child_added', (data) => {
 			this.props.dispatch(addMessage(
 				this.props.channelId,
 				data.val().user,
 				data.val().text
-			))
-		})
+			));
+		});
 	}
 
 	render() {
@@ -31,11 +31,11 @@ class MessageList extends Component {
 							id={index}
 							user={message.user}
 							text={message.text}
-						/>)
+            />);
 					})
 				}
 			</div>
-		)
+		);
 	}
 }
 
@@ -45,6 +45,6 @@ MessageList.propTypes = {
 		text: PropTypes.string.isRequired
 	}).isRequired).isRequired,
 	database: PropTypes.object.isRequired
-}
+};
 
-export default MessageList
+export default MessageList;

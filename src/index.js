@@ -1,32 +1,32 @@
-import firebase from 'firebase'
+import firebase from 'firebase';
 
 let config = {
-	apiKey: 'AIzaSyCilcV9koIQQTfM__MAjgNnfaozazNmRak',
-	authDomain: 'rrmsg-1ee32.firebaseapp.com',
-	databaseURL: 'https://rrmsg-1ee32.firebaseio.com',
-	storageBucket: 'rrmsg-1ee32.appspot.com',
-	messagingSenderId: '106272799399'
-}
+  apiKey: 'AIzaSyCilcV9koIQQTfM__MAjgNnfaozazNmRak',
+  authDomain: 'rrmsg-1ee32.firebaseapp.com',
+  databaseURL: 'https://rrmsg-1ee32.firebaseio.com',
+  storageBucket: 'rrmsg-1ee32.appspot.com',
+  messagingSenderId: '106272799399'
+};
 
-firebase.initializeApp(config)
+firebase.initializeApp(config);
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import './index.css';
 
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import reducer from './reducers'
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducer from './reducers';
 
-let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-import { setDatabase } from './actions'
-store.dispatch(setDatabase(firebase.database()))
+import { setDatabase } from './actions';
+store.dispatch(setDatabase(firebase.database()));
 
 ReactDOM.render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
-	document.getElementById('root')
-)
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);

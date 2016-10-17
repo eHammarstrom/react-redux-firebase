@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import './App.css'
-import CAddMessage from './containers/CAddMessage'
-import CMessageList from './containers/CMessageList'
+import React, { Component } from 'react';
+import './App.css';
+import CAddMessage from './containers/CAddMessage';
+import CMessageList from './containers/CMessageList';
 
 class App extends Component {
 	render() {
@@ -32,8 +32,8 @@ class App extends Component {
 					</tbody>
 				</table>
 			</div>
-		)
+		);
 	}
 }
 
-export default App
+export default App;
